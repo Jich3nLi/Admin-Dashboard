@@ -3,129 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Admin Dashboard</title>
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="dashboard_container">
+        <!--Sidebar-->
+        <nav class="sidebar">
+            <div class="sidebar-header">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                     <rect x="0" y="0" width="45" height="65" fill="white" />
                     <rect x="0" y="75" width="45" height="25" fill="white" />
                     <rect x="55" y="0" width="45" height="25" fill="white" />
                     <rect x="55" y="35" width="45" height="65" fill="white" />
                 </svg>
-                <div class="dashboard">Dashboard</div>
+                <h1 class="dashboard-title">Dashboard</h1>
             </div>
-            <div class="home_container nav_container">
-                <image src="./home.svg"></image>
-                <div class="home nav_link">Home</div>
+            <!--Navigation-->
+            <div class="nav-menu">
+                <ul class="nav-top">
+                    <li class="nav-item">
+                        <image src="./home.svg" alt="Home icon" class="nav-icon">
+                        <span class="nav-link">Home</span>
+                    </li>
+                    <li class="nav-item">
+                        <image src="./profile.svg" alt="Profile icon" class="nav-icon">
+                        <span class="nav-link">Profile</span>
+                    </li>
+                    <li class="nav-item">
+                        <image src="./message.svg" alt="Message icon" class="nav-icon">
+                        <span class="nav-link">Messages</span>
+                    </li>
+                    <li class="nav-item">
+                        <image src="./history.svg" alt="History icon" class="nav-icon">
+                        <span class="nav-link">History</span>
+                    </li>
+                    <li class="nav-item">
+                        <image src="./task.svg" alt="Task icon" class="nav-icon">
+                        <span class="nav-link">Tasks</span>
+                    </li>
+                    <li class="nav-item">
+                        <image src="./community.svg" alt="Community icon" class="nav-icon">
+                        <span class="nav-link">Community</span>
+                    </li>
+                </ul>
+                <ul class="nav-bottom">
+                    <li class="nav-item">
+                        <image src="./setting.svg" alt="Setting icon" class="nav-icon">
+                        <div class="nav-link">Setting</div>
+                    </li>
+                    <li class="nav-item">
+                        <image src="./support.svg" alt="Support icon" class="nav-icon">
+                        <div class="nav-link">Support</div>
+                    </li>
+                    <li class="nav-item">
+                        <image src="./privacy.svg" alt="Privacy icon" class="nav-icon">
+                        <div class="nav-link">Privacy</div>
+                    </li>
+                </ul>
             </div>
-            <div class="profile_container nav_container">
-                <image src="./profile.svg"></image>
-                <div class="profile nav_link">Profile</div>
-            </div>
-            <div class="message_container nav_container">
-                <image src="./message.svg"></image>
-                <div class="message nav_link">Messages</div>
-            </div>
-            <div class="history_container nav_container">
-                <image src="./history.svg"></image>
-                <div class="history nav_link">History</div>
-            </div>
-            <div class="task_container nav_container">
-                <image src="./task.svg"></image>
-                <div class="task nav_link">Tasks</div>
-            </div>
-            <div class="community_container nav_container">
-                <image src="./community.svg"></image>
-                <div class="community nav_link">Community</div>
-            </div>
-            <div class="setting_container nav_container">
-                <image src="./setting.svg"></image>
-                <div class="setting nav_link">Setting</div>
-            </div>
-            <div class="support_container nav_container">
-                <image src="./support.svg"></image>
-                <div class="support nav_link">Support</div>
-            </div>
-            <div class="privacy_container nav_container">
-                <image src="./privacy.svg"></image>
-                <div class="privacy nav_link">Privacy</div>
-            </div>
-        </div>
-        <div class="main">
-            <div class="header">
-                <div class="header_container_1">
-                    <div class="search_bar_container">
-                        <image src="./search.svg"></image>
-                        <input type="text">
+        </nav>   
+
+        <main class="main-content">
+            <header class="header">
+                <!--Search and User Area-->
+                <div class="header-top">
+                    <div class="search-container">
+                        <image src="./search.svg" alt="Search" class="search-icon">
+                        <input type="search" placeholder="Search..." aria-label="Search dashboard">
                     </div>
-                    <div class="login_container">
-                        <image src="./notification.svg"></image>
-                        <a href="">Login</a>
-                        <div>Lemon</div>
+                    <div class="user-actions">
+                        <image src="./notification.svg" alt="Notifications" class="notification-icon">
+                        <a href="https://account.google.com/o/oauth?client_id=Y0UR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=email profile&response_type=code">Login</a>
+                        <span class="username">Lemon</span>
                     </div>
                 </div>
-                <div class="header_container_2">
-                    <div class="user_container">
-                        <image src="./user_default.jpg" id="user_image"></image>
-                        <div class="greeting_container">
-                            <p id="greeting">Hi there,</p>
-                            <p id="user_name">Lemon Lade (@Lemon)</p>
+                <!--User Greeting and Actions-->
+                <div class="header-bottom">
+                    <div class="user-profile">
+                        <image src="./user_default.jpg" alt="User profile" class="user-pic">
+                        <div class="greeting">
+                            <p class="welcome">Hi there,</p>
+                            <h2 class="user-name">Lemon Lade (@Lemon)</h2>
+                        </div>
+                        <div class="actions-buttons">
+                            <button class="btn btn-new">New</button>
+                            <button class="btn btn-upload">Upload</button>
+                            <button class="btn btn-share">Share</button>
                         </div>
                     </div>
-                    <div class="buttons_container">
-                        <button class="new">New</button>
-                        <button class="upload">Upload</button>
-                        <button class="share">Share</button>
-                    </div>
                 </div>
-            </div>
+            </header>
+            <!--Main Content Area-->
             <div class = "content">
-                <div class = "projects_container">
-                    <p class = "subtitles">Your Projects</p>
-                    <div class = "projects_grids">
-                        <div class = "event">
-                            <b>Super Cool Project</b>
-                            <p>Sed tempus ut lacus ut scelersque. Suspendisse sollicitudin nibh erat, id facilisis feils accumsan nec.</p>
-    
-                        </div>
-                        <div class = "event">
-                            <b>Less Cool Project</b>
-                            <p>Nullam condimentum ipsum ut lectus vehicula consectetur. Curabitur dignissim nisi in tortor commodo, ac bibendum magna tincidunt.</p>
-                        </div>
-                        <div class = "event">
-                            <b>Impossible App</b>
-                            <p>In hac habitasse platea dictumst. Vivamus dictum rutrum arcu, a placerat velit sagittis id.</p>
-                        </div>
-                        <div class = "event">
-                            <b>Easy Peasy App</b>
-                            <p>Etiam cursus eros ac efficitur fringilla. Vestibulum dignissim urna eget accumsan aliquam.</p>
-                        </div>
-                        <div class = "event">
-                            <b>Ad Blocker</b>
-                            <p>Quisque eget rutrum nisl. Nam augue justo, cursus vitae metus vel, pharetra hendrerit felis. Aliquam sed malesuada eros.</p>
-                        </div>
-                        <div class = "event">
-                            <b>Money Maker</b>
-                            <p>Praesent convallis libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor purus sit amet ex.</p>
-                        </div>
+                <section class = "projects">
+                    <h2 class = "section-title">Your Projects</h2>
+                    <div class = "projects-grid">
+                        <!--Project Cards-->
+                        <article class = "project-card">
+                            <h3 class="project-title">Super Cool Project</h3>
+                            <p class="project-desc">Sed tempus ut lacus ut scelersque. Suspendisse sollicitudin nibh erat, id facilisis feils accumsan nec. Steins Gate: El psi congroo.</p>
+                            <div class="project-actions">
+                                <button class="action-icon">Collect</button>
+                                <button class="action-icon">Read</button>
+                                <button class="action-icon">Share</button>
+                            </div>
+                        </article>
+                        <article class = "project-card">
+                            <h3 class="project-title">Less Cool Project</h3>
+                            <p class="project-desc">Nullam condimentum ipsum ut lectus vehicula consectetur. Curabitur dignissim nisi in tortor commodo, ac bibendum magna tincidunt.</p>
+                            <div class="project-actions">
+                                <button class="action-icon">Collect</button>
+                                <button class="action-icon">Read</button>
+                                <button class="action-icon">Share</button>
+                            </div>
+                        </article>
+                        <article class = "project-card">
+                            <h3 class="project-title">Impossible App</h3>
+                            <p class="project-desc">In hac habitasse platea dictumst. Vivamus dictum rutrum arcu, a placerat velit sagittis id.</p>
+                            <div class="project-actions">
+                                <button class="action-icon">Collect</button>
+                                <button class="action-icon">Read</button>
+                                <button class="action-icon">Share</button>
+                            </div>
+                        </article>
+                        <article class = "project-card">
+                            <h3 class="project-title">Easy Peasy App</h3>
+                            <p class="project-desc">Etiam cursus eros ac efficitur fringilla. Vestibulum dignissim urna eget accumsan aliquam.</p>
+                            <div class="project-actions">
+                                <button class="action-icon">Collect</button>
+                                <button class="action-icon">Read</button>
+                                <button class="action-icon">Share</button>
+                            </div>
+                        </article>
+                        <article class = "project-card">
+                            <h3 class="project-title">Ad Blocker</h3>
+                            <p class="project-desc">Quisque eget rutrum nisl. Nam augue justo, cursus vitae metus vel, pharetra hendrerit felis. Aliquam sed malesuada eros.</p>
+                            <div class="project-actions">
+                                <button class="action-icon">Collect</button>
+                                <button class="action-icon">Read</button>
+                                <button class="action-icon">Share</button>
+                            </div>
+                        </article>
+                        <article class = "project-card">
+                            <h3 class="project-title">Money Maker</h3>
+                            <p class="project-desc">Praesent convallis libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor purus sit amet ex.</p>
+                            <div class="project-actions">
+                                <button class="action-icon">Collect</button>
+                                <button class="action-icon">Read</button>
+                                <button class="action-icon">Share</button>
+                            </div>
+                        </article>
                     </div>
-                </div>
-                <div class = "notifications">
-                    <div class = "announcements">
-                        <p class = "subtitles">Announcements</p>
-                        <div class = "side_box"></div>
-                    </div>
-                    <div class = "trends">
-                        <p class = "subtitles">Trends</p>
-                        <div class = "side_box"></div>
-                    </div>
-                </div>
+                </section>
+                <aside class = "right-sidebar">
+                    <section class = "announcements">
+                        <h2 class = "section-title">Announcements</h2>
+                        <div class = "announcement-card">
+                            <p class="announcement-desc">Praesent convallis libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor purus sit amet ex.</p>
+                        </div>
+                    </section>
+                    <section class = "trending">
+                        <h2 class = "section-title">Trending</h2>
+                        <div class = "trending-card">
+                            <p class="trending-desc">Praesent convallis libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor purus sit amet ex.</p>
+                        </div>
+                    </section>
+                </aside>
             </div>
-        </div>
+        </main>
     </div>
 </body>
 </html>
